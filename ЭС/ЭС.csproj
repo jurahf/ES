@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26D1338B-0BE0-447B-87A8-861CD23569E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ЭС</RootNamespace>
+    <AssemblyName>ЭС</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums.cs" />
+    <Compile Include="ExpertSystem.cs" />
+    <Compile Include="Fact.cs" />
+    <Compile Include="frmAddDom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddDom.Designer.cs">
+      <DependentUpon>frmAddDom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddReason.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddReason.Designer.cs">
+      <DependentUpon>frmAddReason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddRule.Designer.cs">
+      <DependentUpon>frmAddRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddVal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddVal.Designer.cs">
+      <DependentUpon>frmAddVal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddVar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddVar.Designer.cs">
+      <DependentUpon>frmAddVar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDomains.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDomains.Designer.cs">
+      <DependentUpon>frmDomains.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExplain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExplain.Designer.cs">
+      <DependentUpon>frmExplain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGoal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGoal.Designer.cs">
+      <DependentUpon>frmGoal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuestion.Designer.cs">
+      <DependentUpon>frmQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRules.Designer.cs">
+      <DependentUpon>frmRules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVariables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVariables.Designer.cs">
+      <DependentUpon>frmVariables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyEcxeptions.cs" />
+    <Compile Include="OrderedDictionary.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Rule.cs" />
+    <Compile Include="DragText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DragText.Designer.cs">
+      <DependentUpon>DragText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DragListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DragListBox.Designer.cs">
+      <DependentUpon>DragListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValueDomain.cs" />
+    <Compile Include="Variable.cs" />
+    <EmbeddedResource Include="DragText.resx">
+      <DependentUpon>DragText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddDom.resx">
+      <DependentUpon>frmAddDom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddReason.resx">
+      <DependentUpon>frmAddReason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddRule.resx">
+      <DependentUpon>frmAddRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddVal.resx">
+      <DependentUpon>frmAddVal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddVar.resx">
+      <DependentUpon>frmAddVar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDomains.resx">
+      <DependentUpon>frmDomains.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExplain.resx">
+      <DependentUpon>frmExplain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGoal.resx">
+      <DependentUpon>frmGoal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuestion.resx">
+      <DependentUpon>frmQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRules.resx">
+      <DependentUpon>frmRules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVariables.resx">
+      <DependentUpon>frmVariables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unworked.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Worked.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

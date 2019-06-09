@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Tools;
 
-namespace ЭС
+namespace Classes
 {
     [Serializable]
     public class ValueDomain

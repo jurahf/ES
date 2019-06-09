@@ -6,7 +6,7 @@ using System.Reflection.Emit;
 using System.Reflection;
 using Tools;
 
-namespace ЭС
+namespace Classes
 {
     [Serializable]
     public class ExpertSystem

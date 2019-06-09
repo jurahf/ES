@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ЭС</RootNamespace>
     <AssemblyName>ЭС</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -122,7 +122,7 @@
     <Compile Include="frmVariables.Designer.cs">
       <DependentUpon>frmVariables.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyEcxeptions.cs" />
+    <Compile Include="IЗапросПеременной.cs" />
     <Compile Include="OrderedDictionary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,7 +131,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
-    <Compile Include="Rule.cs" />
     <Compile Include="DragText.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,8 +143,10 @@
     <Compile Include="DragListBox.Designer.cs">
       <DependentUpon>DragListBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rule.cs" />
     <Compile Include="ValueDomain.cs" />
     <Compile Include="Variable.cs" />
+    <Compile Include="ЗапросПеременнойЧерезФорму.cs" />
     <EmbeddedResource Include="DragText.resx">
       <DependentUpon>DragText.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -216,6 +217,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Worked.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Classes\Classes.csproj">
+      <Project>{ae10f6b6-f933-4191-b68f-be6487c5d04c}</Project>
+      <Name>Classes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{8843189a-9d01-4533-85d2-80d5fe350c95}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

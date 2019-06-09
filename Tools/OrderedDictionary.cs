@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ЭС
+namespace Tools
 {
     [Serializable]
     public class OrderedDictionary<TKey, TVal> :IEnumerable<TKey>

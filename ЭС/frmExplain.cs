@@ -29,7 +29,6 @@ namespace ЭС
             //treeView2.ImageList.Images.Add("Unsign", imgUW);
 
             tempES = es;
-            bool lol = false;
             foreach (Rule r in es.Rules.Vals)
             {
                 if (r.Worked != RuleWork.No)

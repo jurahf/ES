@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ЭС
+namespace Tools
 {
     /// <summary>
     /// Ошибки при работе с классом ValueDomain

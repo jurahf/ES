@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Tools;
 
-namespace ЭС
+namespace Classes
 {
     /// <summary>
     /// Устанавливает связь между переменной и конкретным значением из ее домена

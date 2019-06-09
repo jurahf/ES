@@ -140,115 +140,24 @@ namespace ЭС
         /// </summary>
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     FileStream fs = File.OpenRead(openFileDialog1.FileName);
-                    var tempES = (Classes.ExpertSystem)bf.Deserialize(fs);
+                    tempES = (ExpertSystem)bf.Deserialize(fs);
                     fs.Close();
                     tempFile = openFileDialog1.FileName;
                     StartES();
-
-
-                    ///////////////////////////////////////////////////////
-                    //// Преобразуем в новый формат
-                    //Classes.ExpertSystem newES = ConvertES(tempES);
-
-                    //// сохраним
-                    //BinaryFormatter bf2 = new BinaryFormatter();
-                    //FileStream fs2 = File.OpenWrite(Path.Combine(
-                    //    Path.GetDirectoryName(openFileDialog1.FileName),
-                    //    Path.GetFileNameWithoutExtension(openFileDialog1.FileName) + " new" +
-                    //        Path.GetExtension(openFileDialog1.FileName)
-                    //    ));
-                    //bf2.Serialize(fs2, newES);
-                    //fs2.Close();
-                    ///////////////////////////////////////////////////////
-
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    FinishES();
-            //}
-        }
-
-
-        /////////////////////////////////////////////////////////////////////////
-        private Classes.ExpertSystem ConvertES(ExpertSystem tempES)
-        {
-            return new Classes.ExpertSystem()
-            {
-                res = tempES.res,
-                Goal = ConvertVar(tempES.Goal),
-                Domains = ConvertOrderedDict<ValueDomain, Classes.ValueDomain>(tempES.Domains, ConvertDomain),
-                Vars = ConvertOrderedDict<Variable, Classes.Variable>(tempES.Vars, ConvertVar),
-                Rules = ConvertOrderedDict<Rule, Classes.Rule>(tempES.Rules, ConvertRule),
-            };
-        }
-
-        private Classes.Rule ConvertRule(Rule rule)
-        {
-            return new Classes.Rule()
-            {
-                Name = rule.Name,
-                Reasoning = rule.Reasoning,
-                Reasons = rule.Reasons.Select(x => ConvertFact(x)).ToList(),
-                Result = ConvertFact(rule.Result),
-                Worked = (Classes.RuleWork)(int)rule.Worked,
-            };
-        }
-
-        private Classes.Variable ConvertVar(Variable variable)
-        {
-            return new Classes.Variable()
-            {
-                Domain = ConvertDomain(variable.Domain),
-                Name = variable.Name, 
-                MyType = (Classes.VarType)(int)variable.MyType,
-                Question = variable.Question, 
-                Reasoning = variable.Reasoning
-            };
-        }
-
-        private Classes.ValueDomain ConvertDomain(ValueDomain domain)
-        {
-            return new Classes.ValueDomain()
-            {
-                Name = domain.Name,
-                ListVal = domain.ListVal.Select(x => x).ToList(),
-            };
-        }
-
-        private Classes.Fact ConvertFact(Fact x)
-        {
-            if (x == null)
-                return null;
-
-            return new Classes.Fact()
-            {
-                Truly = (Classes.Rightly)(int)x.Truly,
-                V = ConvertVar(x.V),
-                Weight = x.Weight,
-            };
-        }
-
-        private Tools.OrderedDictionary<string, TRes> ConvertOrderedDict<TSrc, TRes>(OrderedDictionary<string, TSrc> dict, Func<TSrc, TRes> convert)
-        {
-            var res = new Tools.OrderedDictionary<string, TRes>();
-
-            foreach (var v in dict)
-            {
-                res.Add(v, convert(dict[v]));
             }
-
-            return res;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FinishES();
+            }
         }
-
-        /////////////////////////////////////////////////////////////////////////
 
 
         /// <summary>

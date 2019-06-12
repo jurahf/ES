@@ -45,4 +45,16 @@ namespace WebApi.Classes
         }
     }
 
+    public class VariableDto
+    {
+        public string Name { get; set; }
+        public List<string> Domain { get; set; }
+
+        public VariableDto(Variable variable)
+        {
+            Name = variable.Name;
+            Domain = variable.Domain.ListVal;
+        }
+    }
+
 }

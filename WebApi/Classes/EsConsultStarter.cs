@@ -10,6 +10,23 @@ namespace WebApi.Classes
 {
     public class EsConsultStarter
     {
+        public List<VariableDto> GetQueriedVariables(string esName)
+        {
+            ExpertSystem es = LoadES(esName);
+            List<VariableDto> result = new List<VariableDto>();
+            foreach (var varName in es.Vars)
+            {
+                if (es.Vars[varName].MyType == VarType.Queried
+                    || es.Vars[varName].MyType == VarType.DeductionQueried)
+                {
+                    result.Add(new VariableDto(es.Vars[varName]));
+                }
+            }
+
+            return result;
+        }
+
+
         public ConsultResultDto LoadAndStartConsult(StartEsArgs args)
         {
             // запуск консультации

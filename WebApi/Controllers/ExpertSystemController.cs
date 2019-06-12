@@ -25,5 +25,12 @@ namespace WebApi.Controllers
             return new EsConsultStarter().LoadAndStartConsult(args);
         }
 
+        [HttpGet]
+        [ActionName("GetQueriedVariables")]
+        public List<VariableDto> GetQueriedVariables(string esName)
+        {
+            return new EsConsultStarter().GetQueriedVariables(esName);
+        }
+
     }
 }
